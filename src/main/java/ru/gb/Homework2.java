@@ -5,6 +5,7 @@ public class Homework2 {
         System.out.println(with10to20(10, 20));
         isPositiveOrNegative(-2);
         System.out.println(isNegative(0));
+        printWordNTimes("Hellow", 5);
     }
 
     private static boolean with10to20(int number1, int number2) {
@@ -22,6 +23,12 @@ public class Homework2 {
 
     public static boolean isNegative (int x) {
         return x < 0;
+    }
+
+    public static void printWordNTimes(String word, int times) {
+        for (int i = 0; i < times ; i++) {
+            System.out.println(word);
+        }
     }
 
 }
