@@ -4,6 +4,7 @@ public class Homework2 {
     public static void main(String[] args) {
         System.out.println(with10to20(10, 20));
         isPositiveOrNegative(-2);
+        System.out.println(isNegative(0));
     }
 
     private static boolean with10to20(int number1, int number2) {
@@ -18,4 +19,9 @@ public class Homework2 {
             System.out.println("Число отрицательное");
         }
     }
+
+    public static boolean isNegative (int x) {
+        return x < 0;
+    }
+
 }
