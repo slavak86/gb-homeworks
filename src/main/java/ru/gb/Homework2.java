@@ -6,6 +6,7 @@ public class Homework2 {
         isPositiveOrNegative(-2);
         System.out.println(isNegative(0));
         printWordNTimes("Hellow", 5);
+        System.out.println(leapYear(2020));
     }
 
     private static boolean with10to20(int number1, int number2) {
@@ -31,4 +32,7 @@ public class Homework2 {
         }
     }
 
+    public static boolean leapYear (int year) {
+        return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+    }
 }
