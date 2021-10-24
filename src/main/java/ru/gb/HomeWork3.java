@@ -8,6 +8,7 @@ public class HomeWork3 {
         changeArray();
         fillDiagonal();
         retLenArr(10, 7);
+        arrayMaxMinElement();
     }
 
     public static void invertArray() {
@@ -60,6 +61,21 @@ public class HomeWork3 {
         }
         return;
 
+    }
+
+    public static void arrayMaxMinElement() {
+        int[] array = {15, 26, 37, 8, 16, 22, 58, -7, -19, 12, 30};
+
+        int min = 0, max = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < min) {
+                min = array[i];
+            }
+            if (array[i] > max) {
+                max = array[i];
+            }
+        }
+        System.out.println("\nMin element: " + min + ", Max element: " + max);
     }
 }
 
