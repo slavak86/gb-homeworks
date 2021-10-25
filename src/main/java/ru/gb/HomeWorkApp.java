@@ -22,19 +22,21 @@ public class HomeWorkApp {
         int result = a + b;
         if (result >= 0) {
             System.out.println("Сумма положительная");
-        } else
+        } else {
             System.out.println("Сумма отрицательная");
+        }
     }
 
     public static void printColor() {
 
         int value = 101;
-        if (value <= 0)
+        if (value <= 0) {
             System.out.println("Красный");
-        else if (value > 0 && value <= 100)
+        } else if (value > 0 && value <= 100) {
             System.out.println("Желтый");
-        else
+        } else {
             System.out.println("Зеленый");
+        }
     }
 
     public static void compareNumbers() {
