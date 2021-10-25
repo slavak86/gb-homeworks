@@ -2,13 +2,15 @@ package ru.gb;
 
 public class HomeWork3 {
     public static void main(String[] args) {
-        invertArray();
-        System.out.println(); //Перенос на новую строку второе задание.
-        fillArray();
-        changeArray();
-        fillDiagonal();
-        retLenArr(10, 7);
-        arrayMaxMinElement();
+//        invertArray();
+//        System.out.println(); //Перенос на новую строку второе задание.
+//        fillArray();
+//        changeArray();
+//        fillDiagonal();
+//        retLenArr(10, 7);
+//        arrayMaxMinElement();
+        modifyArray(new int[]{1, 2, 3, 4, 5}, -2);
+
     }
 
     public static void invertArray() {
@@ -53,7 +55,7 @@ public class HomeWork3 {
         }
     }
 
-    public static void retLenArr(int len, int initialValue){
+    public static void retLenArr(int len, int initialValue) {
         int array[] = new int[len];
         for (int i = 0; i < array.length; i++) {
             array[i] = initialValue;
@@ -64,8 +66,7 @@ public class HomeWork3 {
     }
 
     public static void arrayMaxMinElement() {
-        int[] array = {15, 26, 37, 8, 16, 22, 58, -7, -19, 12, 30};
-
+        int[] array = {2, 75, 45, 5, -5, -9, 0, -15, 47, 55, 32};
         int min = 0, max = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] < min) {
@@ -77,5 +78,37 @@ public class HomeWork3 {
         }
         System.out.println("\nMin element: " + min + ", Max element: " + max);
     }
+
+    static void modifyArray(int[] array, int n) {
+        System.out.print("BEFORE: " );
+        for (int i : array) {
+            System.out.print(i + " ");
+        }
+       System.out.print("(n = " + n + ")");
+        if (n > 0) {
+            for (int i = 0; i < n; i++) {
+                // Right
+                int tmp = array[array.length - 1];
+                for (int j = array.length - 1; j > 0; j--) {
+                    array[j] = array[j - 1];
+                }
+                array[0] = tmp;
+            }
+        } else if (n < 0) {
+            for (int i = 0; i < n * (-1); i++) {
+                // Left
+                int tmp = array[0];
+                for (int j = 0; j < array.length - 1; j++) {
+                    array[j] = array[j + 1];
+                }
+                array[array.length - 1] = tmp;
+            }
+        }
+        System.out.print("\nAFTER:  ");
+        for (int i : array) {
+            System.out.print(i + " ");
+        }
+    }
 }
+
 
