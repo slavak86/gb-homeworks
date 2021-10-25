@@ -2,13 +2,13 @@ package ru.gb;
 
 public class HomeWork3 {
     public static void main(String[] args) {
-//        invertArray();
-//        System.out.println(); //Перенос на новую строку второе задание.
-//        fillArray();
-//        changeArray();
-//        fillDiagonal();
-//        retLenArr(10, 7);
-//        arrayMaxMinElement();
+        invertArray();
+        System.out.println(); //Перенос на новую строку второе задание.
+        fillArray();
+        changeArray();
+        fillDiagonal();
+        retLenArr(10, 7);
+        arrayMaxMinElement();
         modifyArray(new int[]{1, 2, 3, 4, 5}, -2);
 
     }
