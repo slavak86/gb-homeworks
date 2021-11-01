@@ -4,8 +4,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class TicTacToe {
-    public static int SIZE = 3;
-    public static int DOTS_TO_WIN = 3;
+    public static int SIZE = 5;
+    public static int DOTS_TO_WIN = 4;
     public static final char DOT_EMPTY = '•';
     public static final char DOT_X = 'X';
     public static final char DOT_O = 'O';
@@ -60,7 +60,6 @@ public class TicTacToe {
                 }
             }
             if (hor >= DOTS_TO_WIN || ver >= DOTS_TO_WIN) {
-               // System.out.println("По горизонтали или вертикали " + hor + " " + ver);
                 return true;
             }
         }
@@ -77,7 +76,6 @@ public class TicTacToe {
                     }
                 }
                 if (diagMain >= DOTS_TO_WIN) {
-                   // System.out.println("По главной диагонали от центральной оси вправо " + diagMain);
                     return true;
                 }
             }
@@ -94,12 +92,43 @@ public class TicTacToe {
                     }
                 }
                 if (diagMain >= DOTS_TO_WIN) {
-                    //System.out.println("По главной диагонали от центральной оси вниз " + diagMain);
                     return true;
                 }
             }
         }
-
+        for (int j = 0; j < SIZE; j++) {
+            diagReverse = 0;
+            for (int i = 0; i < SIZE; i++) {
+                int k = (SIZE - 1) - i;
+                int l = j + i;
+                if (k >= 0 && l < SIZE) {
+                    if (map[l][k] == symb) {
+                        diagReverse++;
+                    } else if (map[l][k] != symb && diagReverse < DOTS_TO_WIN) {
+                        diagReverse = 0;
+                    }
+                }
+                if (diagReverse >= DOTS_TO_WIN) {
+                    return true;
+                }
+            }
+        }
+        for (int j = 1; j < SIZE; j++) {
+            diagReverse = 0;
+            for (int i = 0; i < SIZE; i++) {
+                int k = (SIZE - 1) - j - i;
+                if (k >= 0) {
+                    if (map[i][k] == symb) {
+                        diagReverse++;
+                    } else if (map[i][k] != symb && diagReverse < DOTS_TO_WIN) {
+                        diagReverse = 0;
+                    }
+                }
+                if (diagReverse >= DOTS_TO_WIN) {
+                    return true;
+                }
+            }
+        }
         return false;
 
     }
@@ -119,7 +148,7 @@ public class TicTacToe {
             x = rand.nextInt(SIZE);
             y = rand.nextInt(SIZE);
         } while (!isCellValid(x, y));
-        System.out.println("Компьютер походил в точку " + (x + 1) + " " + (y + 1));
+        System.out.println("Компьютер сходил в точку " + (x + 1) + " " + (y + 1));
         map[y][x] = DOT_O;
     }
 
