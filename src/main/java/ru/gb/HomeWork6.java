@@ -12,6 +12,6 @@ public class HomeWork6 {
         cat.swim(1);
         System.out.println("Создано собак " + Dog.dogCount);
         System.out.println("Создано кошек " + Cat.catCount);
-//        System.out.println("Всего создано животных " + Animal.animalCount);
+//        System.out.println("Всего создано животных " + Animal.count);
     }
 }

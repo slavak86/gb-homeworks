@@ -28,7 +28,7 @@ public class Dog extends Animal {
     }
 
     @Override
-    public void animalCount(){
+    public void Count(){
         dogCount++;
     }
 }

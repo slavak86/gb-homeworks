@@ -7,6 +7,7 @@ public class Cat extends Animal {
     public Cat(String name) {
         super(name);
     }
+
     @Override
     public void run(int length) {
         if (length >= 0 && length <= RUN_MAX_LENGTH) {
@@ -22,7 +23,7 @@ public class Cat extends Animal {
     }
 
     @Override
-    public void animalCount(){
+    public void Count(){
         catCount++;
     }
 
